@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Coding below */
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #360000;
+}
+
+#grid{
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(4, 100px);
+    gap: 0.3rem;
+}
+
+/* Card */
+
+.card-container{
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.faces{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card-container.flipped .faces {
+    transform: rotateY(180deg);
+}
+
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+img{
+    display: inline-block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.back-face{
+    background-color: transparent;
+    transform: rotateY(180deg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+}
+/* Media Query */
+@media(max-width: 420px){
+    #grid{
+        grid-template-rows: repeat(4, 100px);
+        grid-template-columns: repeat(3, 100px);
+    }
+}
+  
+  
